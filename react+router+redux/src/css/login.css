@@ -1,0 +1,12 @@
+
+.login-form {
+  max-width: 33%;
+  margin:300px;
+  max-height:400px;
+}
+.login-form-button {
+  width: 100%;
+}
+.login{
+  text-align:center;
+}
