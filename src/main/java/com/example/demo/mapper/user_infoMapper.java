@@ -17,9 +17,13 @@ public interface user_infoMapper {
 
     user_info selectByPrimaryKey(Integer id);
 
+    List<user_info> selectAllUser();
+
     List<user_info> selectByParams(@Param("param") Map<String, Object> params);
 
     user_info selectByUsercode(String usercode);
+
+    user_info selectByName(String name);
 
     int updateByPrimaryKeySelective(user_info record);
 

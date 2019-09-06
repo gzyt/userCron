@@ -90,6 +90,7 @@ public class ScheduleTask {
         user_department user_department = new user_department();
 
         user_info.setUsername(jsonObjects.getString("username"));
+        user_info.setPassword(jsonObjects.getString("password"));
         user_info.setUsercode(jsonObjects.getString("usercode"));
         user_info.setDpartmentCode(jsonObjects.getString("department_code"));
         user_info.setStationCode(jsonObjects.getString("station_code"));
@@ -122,7 +123,7 @@ public class ScheduleTask {
 
 
     public void reportCurrentByCron() throws JSONException {
-        String data = usercronController.interfaceUtil("http://192.168.51.159:80/userInfos");
+        String data = interfaceUtil("http://192.168.51.159:80/userInfos");
         try {
             JsonAnalysis(data);
         } catch (JSONException e) {

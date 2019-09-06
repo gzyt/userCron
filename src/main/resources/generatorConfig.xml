@@ -67,8 +67,8 @@
         <!-- 配置表格映射 -->
 <!--        <table tableName="sys_user" domainObjectName="sys_user" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
         <table tableName="user_info" domainObjectName="user_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table tableName="user_department" domainObjectName="user_department" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table tableName="user_station" domainObjectName="user_station" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+<!--        <table tableName="user_department" domainObjectName="user_department" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
+<!--        <table tableName="user_station" domainObjectName="user_station" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
 <!--        <table tableName="sys_role_privilege" domainObjectName="sys_role_privilege" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
     </context>
 </generatorConfiguration>

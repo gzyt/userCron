@@ -1,12 +1,13 @@
 package com.example.demo.dao;
 
-
 import java.util.Date;
 
 public class user_info {
     private Integer id;
 
     private String username;
+
+    private String password;
 
     private String usercode;
 
@@ -16,9 +17,10 @@ public class user_info {
 
     private Date createTime;
 
-    public user_info(Integer id, String username, String usercode, String dpartmentCode, String stationCode, Date createTime) {
+    public user_info(Integer id, String username, String password, String usercode, String dpartmentCode, String stationCode, Date createTime) {
         this.id = id;
         this.username = username;
+        this.password = password;
         this.usercode = usercode;
         this.dpartmentCode = dpartmentCode;
         this.stationCode = stationCode;
@@ -43,6 +45,14 @@ public class user_info {
 
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
     public String getUsercode() {
@@ -82,6 +92,7 @@ public class user_info {
         return "user_info{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", usercode='" + usercode + '\'' +
                 ", dpartmentCode='" + dpartmentCode + '\'' +
                 ", stationCode='" + stationCode + '\'' +

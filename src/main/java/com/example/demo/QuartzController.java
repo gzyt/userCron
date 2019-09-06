@@ -1,19 +1,15 @@
 package com.example.demo;
 
-import com.example.demo.dao.user_department;
 import com.example.demo.dao.user_info;
-import com.example.demo.dao.user_station;
 import com.example.demo.mapper.user_departmentMapper;
 import com.example.demo.mapper.user_infoMapper;
 import com.example.demo.mapper.user_stationMapper;
-import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,9 +17,6 @@ import java.util.Map;
 @Controller
 @RequestMapping("/quartz")
 public class QuartzController{
-
-    @Autowired
-    public SchedulerManager myScheduler;
 
     @Autowired
     public user_infoMapper user_infoMapper;
@@ -72,32 +65,37 @@ public class QuartzController{
         return  user_infoList;
     }
 
-    @RequestMapping(value = "/job2",method = RequestMethod.GET)
-    public String scheduleJob2()
-    {
-        try {
-            myScheduler.startJob("0/5 * * * * ?","job2","group2", ScheduledJob.class);//每五秒执行一次
-            //0 0/5 14 * * ?在每天下午2点到下午2:55期间的每5分钟触发
-            //0 50 14 * * ?在每天下午2点50分5秒执行一次
-//            myScheduler.startJob("5 50 14 * * ?","job2","group2", ScheduledJob.class);
-            return "启动定时器成功";
-        } catch (SchedulerException e) {
-            e.printStackTrace();
-        }
-        return "启动定时器失败";
-    }
-    @RequestMapping(value = "/del_job2",method = RequestMethod.GET)
-    public String deleteScheduleJob2()
-    {
-        try {
-            myScheduler.deleteJob("job2","group2");
-            return "删除定时器成功";
-        } catch (SchedulerException e) {
-            e.printStackTrace();
-        }
-        return "删除定时器失败";
-    }
-
+//    <!--  查找所有-->
+//  <select id="selectAllUser"  resultMap="BaseResultMap">
+//    select * from user_info
+//  </select>
+//  <!--  //根据姓名查找-->
+//  <select id="selectByName" parameterType="String" resultMap="BaseResultMap">
+//    select
+//            <include refid="Base_Column_List" />
+//            from user_info
+//    where username = #{username,jdbcType=INTEGER}
+//  </select>
+//<!--  //根据员工编码查找-->
+//  <select id="selectByUsercode" parameterType="user_info" resultMap="BaseResultMap">
+//    select
+//            <include refid="Base_Column_List" />
+//            from user_info
+//    where usercode = #{usercode,jdbcType=INTEGER}
+//  </select>
+//<!--  //mybatis的xxxMapper.xml的Sql语句，CREATE_DATE是xxx表里面记录创建时间的字段-->
+//  <select id="selectByParams" parameterType="java.util.Map" resultMap="BaseResultMap">
+//    select *
+//    from user_info
+//    <where>
+//      <if test="param.begintTime!=null and param.begintTime!=''">
+//        <![CDATA[  and DATE_FORMAT(CREATE_DATE, '%Y-%m-%d %T:%i:%s') >= DATE_FORMAT(#{param.begintTime}, '%Y-%m-%d %T:%i:%s')   ]]>
+//      </if>
+//      <if test="param.endTime!=null and param.endTime!=''">
+//        <![CDATA[  and DATE_FORMAT(CREATE_DATE, '%Y-%m-%d %T:%i:%s') <= DATE_FORMAT(#{param.endTime}, '%Y-%m-%d %T:%i:%s')   ]]>
+//      </if>
+//    </where>
+//  </select>
 
 
 }
